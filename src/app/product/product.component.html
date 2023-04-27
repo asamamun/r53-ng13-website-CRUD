@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-between">
+    <button class="btn btn-outline-primary" (click)="toggleForm()">Add</button>
+</div>
+<div id="formContainer" class="d-none">
+    <h1>Product Management System</h1>
+<form #f = "ngForm">
+  <input type="hidden" name="id" [(ngModel)] = "selectedProduct.id">
+<label>Title</label>
+<input class="form-control" type="text" name="title" [(ngModel)] = "selectedProduct.title">
+<br>
+<label>Description</label>
+<!-- <input class="form-control" type="text" name="description" [(ngModel)] = "selectedProduct.description"> -->
+<textarea class="form-control" name="description" id="" [(ngModel)] = "selectedProduct.description"></textarea>
+<br>
+<label>Amount</label>
+<input class="form-control" type="text" name="price" [(ngModel)] = "selectedProduct.price">
+<br>
+<input class="btn btn-primary" type="button" (click)="createProduct(f)" value="Save">
+<input class="btn btn-primary" type="button" (click)="cancelCreate()" value="Cancel">
+</form>
+
+</div>
+<div class="row">
+    <div *ngFor="let p of myproducts" class="card col-3 my-2">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title">{{p.title}}</h5>
+          <p class="card-text"> Price: {{p.pprice}}</p>
+          <a class="px-1" [routerLink]="['/details/',p.id]"><i class="fa-solid fa-circle-info"></i></a>
+          <!-- <input class="btn btn-primary" type="button" (click)="editProduct(p)" value="Edit Product"> -->
+          <a class="px-1" href="javascript:void(0)" (click)="editProduct(p)"><i class="fa-regular fa-pen-to-square"></i></a> 
+          <a class="px-1" href="javascript:void(0)" (click)="deleteProduct(p)"><i class="fa-solid fa-trash"></i></a>
+        </div>
+      </div>
+</div>

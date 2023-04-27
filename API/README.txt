@@ -1,0 +1,1 @@
+adjust API link in product.component.ts file
