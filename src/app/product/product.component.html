@@ -24,6 +24,7 @@
     <div *ngFor="let p of myproducts" class="card col-3 my-2">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
+          <img src="https://picsum.photos/id/{{p.id}}/150/150" alt="" class="card-img-top">
           <h5 class="card-title">{{p.title}}</h5>
           <p class="card-text"> Price: {{p.pprice}}</p>
           <a class="px-1" [routerLink]="['/details/',p.id]"><i class="fa-solid fa-circle-info"></i></a>

@@ -26,7 +26,7 @@ constructor(ref: ApplicationRef,private http: HttpClient, private apiService: Ap
   this.getallproducts();
 }
 getallproducts(){
-  this.apiService.readProducts().subscribe(r=>{this.myproducts=r})
+  this.apiService.readProducts().subscribe(r=>{this.myproducts=r; console.log(r)})
 }
 ngOnInit() {
 /*   this.apiService.readProducts().subscribe(response => {
