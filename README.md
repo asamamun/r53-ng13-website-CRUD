@@ -1,4 +1,6 @@
-# Website
+#API Path
+in src/spp/api.service.ts file set your PHP_API_SERVER path(from where your php file can be accessed through http) .
+## Website
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
